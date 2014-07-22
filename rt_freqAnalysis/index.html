@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rt_freqAnalysis</title>
+</head>
+<body>
+  <h1>Real-Time Frequency Domain Analysis</h1>
+  <p id="controls">
+    <input type="button" id="start" value="Start">
+    &nbsp; &nbsp;
+    <input type="button" id="stop" value="Stop">
+  </p>
+
+  <div id="holder">
+  </div>
+  <p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input type="file"></label></p>
+  <p id="filereader">File API & FileReader API not supported</p>
+  <p id="formdata">XHR2's FormData is not supported</p>
+  <p id="progress">XHR2's upload progress isn't supported</p>
+  <p>Upload progress: <progress id="uploadprogress" min="0" max="100" value="0">0</progress></p>
+
+  <style>
+    #canvas {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        background-color: black;
+    }
+    #controls, h1 {
+      text-align: center;
+    }
+    #start, #stop {
+      font-size: 16pt;
+    }
+    #holder {
+      border: 10px dashed #CFCFCF;
+      width: 400px;
+      /*min-height: 300px; */
+      height: 200px;
+      margin: 20px auto;
+    }
+    #holder.hover {
+     border: 10px dashed #0c0;
+   }
+    #holder img {
+      display: block; margin: 10px auto;
+    }
+    #holder p {
+      margin: 10px; font-size: 14px;
+    }
+    #holder #upl_success{
+      margin: 75px auto;
+      font-weight: bold;
+      text-align: center;
+      background-color: #00FF00;
+      border-radius: 50px;
+      width: 75%;
+      padding: 1em;
+    }
+    progress {
+      width: 100%;
+    }
+    progress:after {
+      content: '%';
+    }
+    .fail {
+      background: #c00; padding: 2px; color: #fff;
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
